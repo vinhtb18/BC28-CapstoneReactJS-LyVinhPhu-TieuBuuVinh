@@ -1,0 +1,13 @@
+/*
+    Các folder component và page tổ chức như react component folder
+    Trong các file component.scss và page.scss thì import variable
+    Trong filder style sẽ import base, components, page, template ...
+*/
+
+@import './base/base';
+
+@import './components/header';
+
+@import './pages/home';
+@import './pages/login';
+@import './pages/register'

@@ -1,36 +1,37 @@
-// rxSlice
-import { createSlice } from "@reduxjs/toolkit";
-import { http } from "../../util/config";
-
+import { createSlice } from '@reduxjs/toolkit'
+import {http} from '../../util/config'
 const initialState = {
-  arrProduct: [],
-};
+    arrProduct: []
+}
 
 const productReducer = createSlice({
-  name: "productReducer",
+  name: 'productReducer',
   initialState,
   reducers: {
-    setArrProductAction: (state, action) => {
-      state.arrProduct = action.payload;
-    },
-  },
+    setArrProductAction : (state,action) => {
+        state.arrProduct = action.payload;
+    }
+  }
 });
 
-export const { setArrProductAction } = productReducer.actions;
+export const {setArrProductAction} = productReducer.actions
 
-export default productReducer.reducer;
+export default productReducer.reducer
 
-// --------------action thunk (api)
+// ------------ action thunk (api) ----------------
+
 export const getProductApi = () => {
-  return async (dispatch) => {
-    try {
-      // call api
-      const result = await http.get("/product");
-      // Lay du lieu ve dua len redux
-      const action = setArrProductAction(result.data.content);
-      dispatch(action);
-    } catch (err) {
-      console.log(err);
+
+    return async dispatch => {
+        try {
+            //call api
+            const result = await http.get('/product');
+            //Lấy dữ liệu về đưa lên redux
+            const action = setArrProductAction(result.data.content);
+            dispatch(action);
+        }catch(err) {
+            console.log(err);
+        }
     }
-  };
-};
+
+}
