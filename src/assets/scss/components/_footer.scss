@@ -1,0 +1,41 @@
+@import '../themes/variable';
+@import '../themes/mixin';
+.footer {
+  margin-top: 130px;
+  .footer-group {
+    background-color: $bg-c2-primary;
+    padding: 20px 0;
+
+    .footer-item {
+      h2 {
+        @include text($text-2xl, $text-bold, $text-c1-dark);
+      }
+      ul {
+        margin-top: 20px;
+        padding-left: 0;
+        li {
+          list-style: none;
+          margin-bottom: 5px;
+          a {
+            @include text($text-xs, $text-regular, $text-c1-dark);
+            transition: all 0.3s;
+            &:hover {
+              color: $text-c1-yellow;
+            }
+          }
+        }
+        .footer-item-text-red {
+          color: $text-c1-red;
+        }
+      }
+    }
+    .footer-bd {
+      border-right: 1px solid $bg-c3-primary;
+    }
+  }
+  .footer-bottom {
+    background-color: $bg-c6-primary;
+  }
+}
+
+

@@ -6,7 +6,11 @@
 
 @import './base/base';
 
+@import './themes/variable';
+@import './themes/mixin';
+
 @import './components/header';
+@import './components/footer';
 
 @import './pages/home';
 @import './pages/login';

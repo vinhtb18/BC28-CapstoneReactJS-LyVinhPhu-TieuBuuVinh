@@ -1,3 +1,97 @@
 @import '../themes/variable';
+@import '../themes/mixin';
 
 //css
+.header {
+    &-nav {
+      background-color: $bg-c2-secondary;
+      a:hover {
+        color: $text-c1-yellow;
+      }
+      .header-left {
+      }
+      .header-right {
+        &_cart {
+          i {
+            @include text($text-2xl, $text-bold, $text-c2-light);
+          }
+          &_count {
+            @include text($text-2xl, $text-light, $text-c2-light);
+          }
+          &:hover i,
+          &:hover span {
+            color: $text-c1-yellow;
+          }
+        }
+  
+        &_text {
+          @include text($text-base, $text-light, $text-c5-light);
+        }
+        #login {
+          margin: 0 20px;
+        }
+      }
+    }
+    .header-menu {
+      ul {
+        li {
+          position: relative;
+          margin-right: 24px;
+  
+          &:hover a::after {
+            opacity: 1;
+            width: 100%;
+          }
+          &:hover a {
+            color: $text-c1-yellow;
+          }
+          a {
+            @include text($text-xl, $text-light, $text-c1-dark);
+  
+            &::after {
+              content: '';
+              bottom: 0;
+              left: 0;
+              background-color: $bg-c1-secondary;
+              height: 2px;
+              position: absolute;
+              opacity: 0;
+              transition: all 0.5s;
+              width: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  // navbar scroll
+  .sticky {
+    background-color: #fff;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 20%);
+  }
+  
+  //responsive
+  @media (max-width: $bp-lg) {
+    .header {
+      .header-menu {
+        ul {
+          background-color: #fff;
+          margin-top: 20px;
+          li {
+            max-width: 80px;
+  
+            &:hover a::after {
+            }
+            &:hover a {
+            }
+            a {
+              &::after {
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  

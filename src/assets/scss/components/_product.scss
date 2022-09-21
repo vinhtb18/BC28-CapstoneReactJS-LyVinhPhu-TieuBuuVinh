@@ -1,0 +1,16 @@
+@import '../themes/variable';
+@import '../themes/mixin';
+
+// css
+#card{
+    &_img{}
+    &_content{
+        &_name{}
+        &_price{}
+        &_addCart{
+            i{}
+        }
+
+
+    }
+}
